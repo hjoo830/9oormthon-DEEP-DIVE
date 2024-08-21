@@ -19,7 +19,7 @@ header {
 
 nav {
   background-color: rgb(128, 177, 223);
-  width: 120px;
+  width: 160px;
   /* height: 200vh; */
   position: relative;
 }
@@ -31,7 +31,7 @@ nav>ul {
   width: 200px;
   position: sticky;
   top: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
 nav>ul li {
@@ -45,6 +45,50 @@ nav>ul li a {
 
 main {
   margin: 0 20px;
+}
+
+.html-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.item-name {
+  width: 50px;
+}
+
+input[type="text"]#name {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.sex-item,
+.lang-item {
+  display: flex;
+  gap: 5px;
+}
+
+.submit-button {
+  background-color: #0080ff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
 }
 
 footer {

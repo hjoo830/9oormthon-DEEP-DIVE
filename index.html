@@ -19,34 +19,45 @@
   <div class="wrapper">
     <nav>
       <ul>
-        <li><a href="#1">메인 콘텐츠 1</a></li>
+        <li><a href="#1">html 폼 요소 이해하기</a></li>
         <li><a href="#2">메인 콘텐츠 2</a></li>
         <li><a href="#3">메인 콘텐츠 3</a></li>
       </ul>
     </nav>
     <main>
-      <section class="section1" id="1">
-        <h2>메인 콘텐츠 1</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, atque cupiditate iste laudantium fuga ad,
-          impedit dolorum voluptas eaque omnis mollitia error debitis quibusdam possimus doloribus nobis rem, accusamus
-          voluptate! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit odit nobis saepe architecto
-          eos quis ab. Quaerat sit illo aspernatur ut placeat. Ex provident quo repellat molestias a magni temporibus!
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, atque cupiditate iste laudantium fuga ad,
-          impedit dolorum voluptas eaque omnis mollitia error debitis quibusdam possimus doloribus nobis rem, accusamus
-          voluptate! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit odit nobis saepe architecto
-          eos quis ab. Quaerat sit illo aspernatur ut placeat. Ex provident quo repellat molestias a magni
-          temporibus!Lorem
-          ipsum, dolor sit amet consectetur adipisicing elit. Nulla, atque cupiditate iste laudantium fuga ad,
-          impedit dolorum voluptas eaque omnis mollitia error debitis quibusdam possimus doloribus nobis rem, accusamus
-          voluptate!
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit odit nobis saepe architecto eos quis
-          ab. Quaerat sit illo aspernatur ut placeat. Ex provident quo repellat molestias a magni temporibus!Lorem
-          ipsum,
-          dolor sit amet consectetur adipisicing elit. Nulla, atque cupiditate iste laudantium fuga ad,
-          impedit dolorum voluptas eaque omnis mollitia error debitis quibusdam possimus doloribus nobis rem, accusamus
-          voluptate!
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit odit nobis saepe architecto eos quis
-          ab. Quaerat sit illo aspernatur ut placeat. Ex provident quo repellat molestias a magni temporibus!</p>
+      <section class="form-section" id="1">
+        <h2>html 폼 요소 이해하기</h2>
+        <form class="html-form">
+          <div class="form-item">
+            <label for="name" class="item-name">이름</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-item">
+            <label class="item-name">성별</label><br>
+            <div class="sex-item">
+              <input type="radio" id="male" name="sex" value="male" required>
+              <label for="male">남자</label><br>
+              <input type="radio" id="female" name="sex" value="female" required>
+              <label for="female">여자</label><br>
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="item-name">언어</label><br>
+            <div class="lang-item">
+              <input type="checkbox" id="javascript" name="language" value="javascript">
+              <label for="javascript">JavaScript</label><br>
+              <input type="checkbox" id="python" name="language" value="python">
+              <label for="python">Python</label><br>
+              <input type="checkbox" id="java" name="language" value="java">
+              <label for="java">Java</label><br>
+              <input type="checkbox" id="cpp" name="language" value="cpp">
+              <label for="cpp">C++</label><br>
+              <input type="checkbox" id="c" name="language" value="c">
+              <label for="c">C</label><br>
+            </div>
+          </div>
+          <button type="submit" class="submit-button">제출</button>
+        </form>
       </section>
       <section class="section2" id="2">
         <h2>메인 콘텐츠 2</h2>
