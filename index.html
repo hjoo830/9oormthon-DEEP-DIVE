@@ -21,7 +21,8 @@
       <ul>
         <li><a href="#1">html 폼 요소 이해하기</a></li>
         <li><a href="#2">table 기본 이해하기</a></li>
-        <li><a href="#3">메인 콘텐츠 3</a></li>
+        <li><a href="#3">로그인</a></li>
+        <li><a href="#4">회원가입</a></li>
       </ul>
     </nav>
     <main>
@@ -59,7 +60,7 @@
           <button type="submit" class="submit-button">제출</button>
         </form>
       </section>
-      <section class="section2" id="2">
+      <section class="table-section" id="2">
         <h2>table 기본 이해하기</h2>
         <table>
           <tr>
@@ -119,18 +120,36 @@
           </tr>
         </table>
       </section>
-      <section class="section3" id="3">
-        <h2>메인 콘텐츠 3</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam blanditiis ex eveniet fugiat ab excepturi
-          iste, rerum iure sit. Necessitatibus laudantium fugiat porro similique? Deleniti magni nihil enim provident.
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque illum itaque aspernatur tempore explicabo
-          exercitationem facilis debitis, vero expedita quidem veritatis architecto recusandae illo iste necessitatibus
-          dolorum magni? Voluptatum, laboriosam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste quia
-          architecto aut minima fugiat ipsa recusandae necessitatibus repellat. Exercitationem blanditiis vitae ut
-          sapiente in deserunt libero, totam dolorem voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit.
-          Laborum voluptas modi accusantium voluptates corrupti, id non omnis esse quo consequatur, molestias
-          necessitatibus! Illo alias adipisci commodi rem minus in dolor?</p>
+      <section class="login-section">
+        <h2>다양한 입력폼 만들기</h2>
+        <form class="login-form">
+          <h3 class="login-item" id="3">로그인</h3>
+          <div class="login-item">
+            <label for="email" class="item-name">이메일</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="login-item">
+            <label class="item-name">비밀번호</label><br>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="submit-button">로그인</button>
+        </form>
+        <form class="signup-form">
+          <h3 class="signup-item" id="4">회원가입</h3>
+          <div class="signup-item">
+            <label for="email" class="item-name">이메일</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="signup-item">
+            <label class="item-name">비밀번호</label><br>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="signup-item">
+            <label class="item-name">비밀번호 확인</label><br>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="submit-button">회원가입</button>
+        </form>
       </section>
     </main>
   </div>
