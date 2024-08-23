@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동적인 웹페이지</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #text {
+      font-size: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>버튼을 누를 때마다 텍스트와 색깔이 바뀐다</h1>
+  <p id="text">원래 텍스트</p>
+  <button id="changeTextButton">버튼</button>
+
+  <script>
+    const button = document.getElementById('changeTextButton');
+    const text = document.getElementById('text');
+
+    let isOriginal = true;
+
+    button.addEventListener('click', function () {
+      if (isOriginal) {
+        text.textContent = "바뀐 텍스트!";
+        text.style.color = "blue";
+      } else {
+        text.textContent = "원래 텍스트";
+        text.style.color = "black";
+      }
+      isOriginal = !isOriginal; // 상태 반전
+    });
+  </script>
+</body>
+
+</html>
