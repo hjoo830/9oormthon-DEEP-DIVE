@@ -17,6 +17,14 @@
     p#id {
       color: blue;
     }
+
+    ul li {
+      color: green;
+    }
+
+    ul>li {
+      color: pink;
+    }
   </style>
 </head>
 
@@ -53,14 +61,26 @@
 
     <input type="text" id="textInput3" name="textInput3" placeholder="Toggling Text Input">
     <button type="button" onclick="toggleEnabled()">Toggle Enabled/Disabled</button>
-
-    <script>
-      function toggleEnabled() {
-        const input = document.getElementById('textInput3');
-        input.disabled = !input.disabled;
-      }
-    </script>
   </div>
+  <div class="descendant">
+    <h1>자손 선택자 이해하기</h1>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+      </ol>
+      <li>Item 3</li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleEnabled() {
+      const input = document.getElementById('textInput3');
+      input.disabled = !input.disabled;
+    }
+  </script>
 </body>
 
 </html>
