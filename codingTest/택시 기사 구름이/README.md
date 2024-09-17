@@ -20,11 +20,27 @@
 
 첫 번째 예제의 지도는 아래 그림과 같다. 구름이의 택시는 처음에 첫 번째 손님의 승차 위치인 (3, 5)에 위치해 있다.
 
+<div align="center">
+  <img width="320" alt="스크린샷 2024-09-18 오전 4 18 28" src="https://github.com/user-attachments/assets/3ed406ca-f048-4c6c-ae08-fefe42ce492b">
+</div>
+
 구름이는 첫 번째 손님을 태우고 (4, 3)으로 이동한다. 이 때 이동 거리는 5이고, 15의 기본 요금을 받는다.
+
+<div align="center">
+  <img width="316" alt="스크린샷 2024-09-18 오전 4 18 36" src="https://github.com/user-attachments/assets/9dcedfba-3934-4186-a32e-a62b0600d02f">
+</div>
 
 그리고 다음 손님을 태우기 위해 (5, 1)로 이동한다. 이동 거리는 5이다.
 
+<div align="center">
+  <img width="312" alt="스크린샷 2024-09-18 오전 4 18 44" src="https://github.com/user-attachments/assets/4fdea749-1373-4374-bd66-728e2b75bbf0">
+</div>
+
 구름이는 두 번째 손님을 태우고 (2, 5)로 이동한다. 이 때 이동 거리는 9이고, 기본 요금을 받는 기준보다 더 많이 이동했으므로 15의 기본 요금과 8의 추가 요금을 받는다.
+
+<div align="center">
+  <img width="314" alt="스크린샷 2024-09-18 오전 4 18 52" src="https://github.com/user-attachments/assets/29c49190-0e0d-497b-91b5-47b8baca6f25">
+</div>
 
 구름이가 하루 동안 번 돈은 38이고, 총 19의 거리를 이동했기 때문에 통행료로 19를 내야 한다. 따라서 오늘 하루 동안 구름이가 얻은 순수익은 19이다.
 
