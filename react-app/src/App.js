@@ -1,15 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import { displayTodos } from "./components/displayTodos";
+
+const todos = [
+  { id: 1, task: "구름톤 출석하기", completed: true },
+  { id: 2, task: "밥 먹기", completed: false },
+  { id: 3, task: "모던 리액트 완독하기", completed: false },
+];
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <h1 style={{ textAlign: "center" }}>To Do List</h1>
+      <ul>{displayTodos(todos)}</ul>
     </div>
   );
 }
