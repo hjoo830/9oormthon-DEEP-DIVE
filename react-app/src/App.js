@@ -9,16 +9,9 @@ function App() {
   ]);
 
   const toggleTodo = (id) => {
-    const updatedTodos = todos.map((todo) => {
-      if (todo.id === id) {
-        return {
-          id: todo.id,
-          task: todo.task,
-          completed: !todo.completed,
-        };
-      }
-      return todo;
-    });
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    );
     setTodos(updatedTodos);
   };
 
