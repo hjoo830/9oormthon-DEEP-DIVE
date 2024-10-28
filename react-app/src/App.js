@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Todos } from "./components/Todos";
+import UserInfo from "./components/UserInfo";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <h1 style={{ textAlign: "center" }}>To Do List</h1>
       <ul>{Todos(todos, toggleTodo)}</ul>
+      <UserInfo />
     </div>
   );
 }
