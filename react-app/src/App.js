@@ -1,13 +1,24 @@
 import React, { useState } from "react";
-import { Todos } from "./components/Todos";
+import { DragDropContext } from "react-beautiful-dnd";
+import Todos from "./components/Todos";
 import UserInfo from "./components/UserInfo";
 
 function App() {
   const [todos, setTodos] = useState([
-    { id: 1, task: "구름톤 출석하기", completed: true },
-    { id: 2, task: "밥 먹기", completed: false },
-    { id: 3, task: "모던 리액트 완독하기", completed: false },
+    { id: "1", task: "구름톤 출석하기", completed: true },
+    { id: "2", task: "밥 먹기", completed: false },
+    { id: "3", task: "모던 리액트 완독하기", completed: false },
   ]);
+
+  const handleOnDragEnd = (result) => {
+    if (!result.destination) return;
+
+    const updatedTodos = Array.from(todos);
+    const [reorderedItem] = updatedTodos.splice(result.source.index, 1);
+    updatedTodos.splice(result.destination.index, 0, reorderedItem);
+
+    setTodos(updatedTodos);
+  };
 
   const toggleTodo = (id) => {
     const updatedTodos = todos.map((todo) =>
@@ -17,11 +28,13 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1 style={{ textAlign: "center" }}>To Do List</h1>
-      <ul>{Todos(todos, toggleTodo)}</ul>
-      <UserInfo />
-    </div>
+    <DragDropContext onDragEnd={handleOnDragEnd}>
+      <div className="App">
+        <h1 style={{ textAlign: "center" }}>To Do List</h1>
+        <Todos todos={todos} toggleTodo={toggleTodo} />
+        <UserInfo />
+      </div>
+    </DragDropContext>
   );
 }
 
