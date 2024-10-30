@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import Todos from "./components/Todos";
 import UserInfo from "./components/UserInfo";
@@ -9,6 +9,10 @@ function App() {
     { id: "2", task: "밥 먹기", completed: false },
     { id: "3", task: "모던 리액트 완독하기", completed: false },
   ]);
+
+  useEffect(() => {
+    console.log("변경된 todos:", todos);
+  }, [todos]);
 
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
