@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import Todos from "./components/Todos";
 import UserInfo from "./components/UserInfo";
@@ -9,6 +9,16 @@ function App() {
     { id: "2", task: "밥 먹기", completed: false },
     { id: "3", task: "모던 리액트 완독하기", completed: false },
   ]);
+
+  const completedCount = useMemo(
+    () => todos.filter((todo) => todo.completed).length,
+    [todos]
+  );
+
+  const progress = useMemo(
+    () => (todos.length > 0 ? (completedCount / todos.length) * 100 : 0),
+    [completedCount, todos.length]
+  );
 
   useEffect(() => {
     console.log("변경된 todos:", todos);
@@ -39,6 +49,27 @@ function App() {
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <div className="App">
         <h1 style={{ textAlign: "center" }}>To Do List</h1>
+        <p style={{ textAlign: "center" }}>완료한 일: {completedCount}개</p>
+        <div style={{ margin: "20px", textAlign: "center" }}>
+          <div
+            style={{
+              width: "100%",
+              height: "20px",
+              backgroundColor: "#f3f3f3",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                width: `${progress}%`,
+                height: "100%",
+                backgroundColor: "#4caf50",
+                transition: "width 0.3s ease-in-out",
+              }}
+            ></div>
+          </div>
+          <p>{progress.toFixed(1)}% 완료</p>
+        </div>
         <Todos todos={todos} toggleTodo={toggleTodo} />
         <UserInfo />
       </div>
