@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import Todos from "./components/Todos";
 import UserInfo from "./components/UserInfo";
@@ -14,22 +14,26 @@ function App() {
     console.log("변경된 todos:", todos);
   }, [todos]);
 
-  const handleOnDragEnd = (result) => {
-    if (!result.destination) return;
+  const handleOnDragEnd = useCallback(
+    (result) => {
+      if (!result.destination) return;
 
-    const updatedTodos = Array.from(todos);
-    const [reorderedItem] = updatedTodos.splice(result.source.index, 1);
-    updatedTodos.splice(result.destination.index, 0, reorderedItem);
+      const updatedTodos = Array.from(todos);
+      const [reorderedItem] = updatedTodos.splice(result.source.index, 1);
+      updatedTodos.splice(result.destination.index, 0, reorderedItem);
 
-    setTodos(updatedTodos);
-  };
+      setTodos(updatedTodos);
+    },
+    [todos]
+  );
 
-  const toggleTodo = (id) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+  const toggleTodo = useCallback((id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
     );
-    setTodos(updatedTodos);
-  };
+  }, []);
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
