@@ -2,13 +2,10 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import Todos from "./components/Todos";
 import UserInfo from "./components/UserInfo";
+import { fetchTodos } from "./api";
 
 function App() {
-  const [todos, setTodos] = useState([
-    { id: "1", task: "구름톤 출석하기", completed: true },
-    { id: "2", task: "밥 먹기", completed: false },
-    { id: "3", task: "모던 리액트 완독하기", completed: false },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const completedCount = useMemo(
     () => todos.filter((todo) => todo.completed).length,
@@ -21,8 +18,13 @@ function App() {
   );
 
   useEffect(() => {
-    console.log("변경된 todos:", todos);
-  }, [todos]);
+    const loadTodos = async () => {
+      const fetchedTodos = await fetchTodos();
+      setTodos(fetchedTodos);
+    };
+
+    loadTodos();
+  }, []);
 
   const handleOnDragEnd = useCallback(
     (result) => {
