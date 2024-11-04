@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import Todos from "./components/Todos";
 import UserInfo from "./components/UserInfo";
+import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
 import { fetchTodos } from "./api";
 
 function App() {
@@ -49,31 +51,40 @@ function App() {
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
-      <div className="App">
-        <h1 style={{ textAlign: "center" }}>To Do List</h1>
-        <p style={{ textAlign: "center" }}>완료한 일: {completedCount}개</p>
-        <div style={{ margin: "20px", textAlign: "center" }}>
-          <div
-            style={{
-              width: "100%",
-              height: "20px",
-              backgroundColor: "#f3f3f3",
-              overflow: "hidden",
-            }}
-          >
+      <Navbar />
+      <div id="home">
+        <Banner />
+      </div>
+      <div className="App" style={{ paddingTop: "20px", height: "150vh" }}>
+        <div id="todos" style={{ paddingTop: "30px" }}>
+          <h1 style={{ textAlign: "center" }}>To Do List</h1>
+          <p style={{ textAlign: "center" }}>완료한 일: {completedCount}개</p>
+          <div style={{ margin: "20px", textAlign: "center" }}>
             <div
               style={{
-                width: `${progress}%`,
-                height: "100%",
-                backgroundColor: "#4caf50",
-                transition: "width 0.3s ease-in-out",
+                width: "100%",
+                height: "20px",
+                backgroundColor: "#f3f3f3",
+                overflow: "hidden",
               }}
-            ></div>
+            >
+              <div
+                style={{
+                  width: `${progress}%`,
+                  height: "100%",
+                  backgroundColor: "#4caf50",
+                  transition: "width 0.3s ease-in-out",
+                }}
+              ></div>
+            </div>
+            <p>{progress.toFixed(1)}% 완료</p>
           </div>
-          <p>{progress.toFixed(1)}% 완료</p>
+
+          <Todos todos={todos} toggleTodo={toggleTodo} />
         </div>
-        <Todos todos={todos} toggleTodo={toggleTodo} />
-        <UserInfo />
+        <div id="user">
+          <UserInfo />
+        </div>
       </div>
     </DragDropContext>
   );
