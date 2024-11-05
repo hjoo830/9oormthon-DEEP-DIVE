@@ -4,10 +4,12 @@ import Todos from "./components/Todos";
 import UserInfo from "./components/UserInfo";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
+import Modal from "./components/Modal";
 import { fetchTodos } from "./api";
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const completedCount = useMemo(
     () => todos.filter((todo) => todo.completed).length,
@@ -49,6 +51,9 @@ function App() {
     );
   }, []);
 
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <Navbar />
@@ -79,12 +84,25 @@ function App() {
             </div>
             <p>{progress.toFixed(1)}% 완료</p>
           </div>
-
           <Todos todos={todos} toggleTodo={toggleTodo} />
         </div>
         <div id="user">
           <UserInfo />
         </div>
+
+        <div style={{ textAlign: "center", marginTop: "20px" }}>
+          <button onClick={openModal} style={{ padding: "10px 20px" }}>
+            모달 열기
+          </button>
+        </div>
+
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <h2>모달 창</h2>
+          <p>
+            버튼을 누르면 모달 창이 열리고, 우측 상단의 x 버튼을 누르면 모달
+            창이 닫힌다.
+          </p>
+        </Modal>
       </div>
     </DragDropContext>
   );
