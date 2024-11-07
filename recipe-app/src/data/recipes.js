@@ -1,0 +1,115 @@
+const recipes = [
+  {
+    id: 1,
+    name: "김치찌개",
+    description: "김치와 돼지고기를 넣어 얼큰하게 끓인 찌개.",
+    image:
+      "https://i.namu.wiki/i/8drgvI-cQLUfJDC00zbl2ZolK4W3o4ZkVSpR-zM5FZk_QzT58vYnx_7ohk0qwGYYiSLPiZgwccyIEFUtYKDjUQ.webp",
+    ingredients: ["김치", "돼지고기", "두부", "대파", "고춧가루", "다진 마늘"],
+    cookingTime: "30분",
+    instructions: [
+      "1. 냄비에 돼지고기와 다진 마늘을 넣고 볶습니다.",
+      "2. 고기가 반쯤 익으면 김치를 넣고 함께 볶아줍니다.",
+      "3. 김치와 고기가 잘 어우러지면 물을 붓고 끓입니다.",
+      "4. 끓기 시작하면 두부와 대파를 넣고 한소끔 더 끓입니다.",
+      "5. 고춧가루와 간을 맞춰 완성합니다.",
+    ],
+  },
+  {
+    id: 2,
+    name: "불고기",
+    description: "얇게 썬 소고기를 간장 양념에 재워 구운 요리.",
+    image: "https://www.foodjang.com/New/03/221006979/221006979_b_2.jpg",
+    ingredients: [
+      "소고기",
+      "간장",
+      "설탕",
+      "참기름",
+      "다진 파",
+      "다진 마늘",
+      "양파",
+    ],
+    cookingTime: "20분",
+    instructions: [
+      "1. 소고기를 얇게 썰어 준비합니다.",
+      "2. 간장, 설탕, 참기름, 다진 파와 마늘을 섞어 양념을 만듭니다.",
+      "3. 양념에 소고기를 넣고 잘 버무려 10분 정도 재웁니다.",
+      "4. 팬에 양념한 소고기와 양파를 넣고 볶습니다.",
+      "5. 고기가 익으면 접시에 담아 완성합니다.",
+    ],
+  },
+  {
+    id: 3,
+    name: "된장찌개",
+    description: "된장과 채소를 넣어 구수하게 끓인 찌개.",
+    image:
+      "https://lh3.googleusercontent.com/proxy/2ddjBa4fRy_fGipCN4yl3Lh5SSthlV4mTkGBbabb6ofRXxEzVi7MUAKfW2a5oe9tA8fZ4NRPIcUqMoFV1ojpboSV0dNndfIcaKljJw",
+    ingredients: [
+      "된장",
+      "애호박",
+      "두부",
+      "감자",
+      "대파",
+      "청양고추",
+      "다진 마늘",
+    ],
+    cookingTime: "25분",
+    instructions: [
+      "1. 냄비에 물을 넣고 된장을 풀어줍니다.",
+      "2. 애호박, 두부, 감자를 먹기 좋은 크기로 썰어 넣습니다.",
+      "3. 다진 마늘과 대파, 청양고추를 넣고 끓입니다.",
+      "4. 중불에서 재료가 익을 때까지 끓입니다.",
+      "5. 간을 맞추고 그릇에 담아 완성합니다.",
+    ],
+  },
+  {
+    id: 4,
+    name: "잡채",
+    description: "당면과 채소를 함께 볶아 만든 요리.",
+    image:
+      "https://img-cf.kurly.com/hdims/resize/%3E720x/quality/90/src/shop/data/goodsview/20240905/gv00001554830_1.jpg",
+    ingredients: [
+      "당면",
+      "소고기",
+      "시금치",
+      "당근",
+      "양파",
+      "간장",
+      "설탕",
+      "참기름",
+    ],
+    cookingTime: "40분",
+    instructions: [
+      "1. 당면을 물에 불려 준비합니다.",
+      "2. 소고기는 간장, 설탕, 다진 마늘에 재워둡니다.",
+      "3. 시금치, 당근, 양파를 볶아줍니다.",
+      "4. 팬에 불린 당면과 재워둔 소고기를 함께 볶습니다.",
+      "5. 모든 재료를 섞어 간을 맞추고 완성합니다.",
+    ],
+  },
+  {
+    id: 5,
+    name: "비빔밥",
+    description: "밥 위에 나물과 고기를 올려 고추장과 함께 비벼 먹는 요리.",
+    image:
+      "https://i.namu.wiki/i/dgjXU86ae29hDSCza-L0GZlFt3T9lRx1Ug9cKtqWSzMzs7Cd0CN2SzyLFEJcHVFviKcxAlIwxcllT9s2sck0RA.jpg",
+    ingredients: [
+      "밥",
+      "시금치",
+      "고사리",
+      "콩나물",
+      "소고기",
+      "계란",
+      "고추장",
+    ],
+    cookingTime: "15분",
+    instructions: [
+      "1. 시금치, 고사리, 콩나물을 데쳐서 준비합니다.",
+      "2. 소고기는 간장과 마늘에 재워서 볶아줍니다.",
+      "3. 밥 위에 나물과 고기를 올리고 계란 프라이를 얹습니다.",
+      "4. 고추장을 곁들여 비벼 먹습니다.",
+    ],
+  },
+];
+
+export default recipes;

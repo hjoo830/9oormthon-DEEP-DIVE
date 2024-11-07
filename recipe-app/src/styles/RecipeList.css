@@ -1,0 +1,25 @@
+.recipeList {
+  padding: 20px 50px;
+}
+
+.searchContainer {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchIcon {
+  background-color: #eeeeee;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}

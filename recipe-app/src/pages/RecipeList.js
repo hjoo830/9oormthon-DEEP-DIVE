@@ -1,31 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SearchBar from "./SearchBar";
+import { IoSearch } from "react-icons/io5";
+import recipes from "../data/recipes";
+import RecipeCard from "../components/RecipeCard";
+import "../styles/RecipeList.css";
 
 function RecipeList() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const navigate = useNavigate();
 
-  const recipes = [
-    { id: 1, name: "Recipe 1" },
-    { id: 2, name: "Recipe 2" },
-    { id: 3, name: "Recipe 3" },
-  ];
+  const handleSearch = () => {
+    navigate(`/search?query=${searchTerm}`);
+  };
 
   const goToDetail = (id) => {
     navigate(`/recipes/${id}`);
   };
 
   return (
-    <div>
+    <div className="recipeList">
+      <div className="searchContainer">
+        <SearchBar onSearch={setSearchTerm} />
+        <IoSearch onClick={handleSearch} className="searchIcon" />
+      </div>
       <h1>Recipe List</h1>
-      <ul>
+      <div className="recipeGrid">
         {recipes.map((recipe) => (
-          <li
-            key={recipe.id}
-            onClick={() => goToDetail(recipe.id)}
-            style={{ cursor: "pointer" }}
-          >
-            {recipe.name}
-          </li>
+          <RecipeCard key={recipe.id} recipe={recipe} />
         ))}
       </ul>
     </div>
