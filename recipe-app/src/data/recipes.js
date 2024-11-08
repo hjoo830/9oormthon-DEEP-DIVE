@@ -43,7 +43,7 @@ const recipes = [
     name: "된장찌개",
     description: "된장과 채소를 넣어 구수하게 끓인 찌개.",
     image:
-      "https://lh3.googleusercontent.com/proxy/2ddjBa4fRy_fGipCN4yl3Lh5SSthlV4mTkGBbabb6ofRXxEzVi7MUAKfW2a5oe9tA8fZ4NRPIcUqMoFV1ojpboSV0dNndfIcaKljJw",
+      "https://img-cf.kurly.com/hdims/resize/%3E720x/quality/90/src/shop/data/goodsview/20230817/gv40000717636_1.jpg",
     ingredients: [
       "된장",
       "애호박",
