@@ -5,6 +5,7 @@
   cursor: pointer;
   transition: transform 0.2s ease;
   max-width: 300px;
+  height: 350px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
