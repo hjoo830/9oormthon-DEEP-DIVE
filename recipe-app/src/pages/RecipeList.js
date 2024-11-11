@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import SearchBar from "./SearchBar";
 import { IoSearch } from "react-icons/io5";
 import recipes from "../data/recipes";
@@ -34,15 +40,41 @@ function RecipeList() {
         <IoSearch onClick={handleSearch} className="searchIcon" />
       </div>
       <h1>Recipe List</h1>
-      <div className="recipeGrid">
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        loop={true}
+        navigation
+        pagination={{ clickable: true }}
+        breakpoints={{
+          1378: {
+            slidesPerView: 5,
+            slidesPerGroup: 5,
+          },
+          998: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+          },
+          625: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+          },
+          0: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+        }}
+        resizeObserver={false}
+      >
         {recipes.map((recipe) => (
-          <RecipeCard
-            key={recipe.id}
-            recipe={recipe}
-            onClick={(event) => openRecipeDetail(recipe, event)}
-          />
+          <SwiperSlide key={recipe.id}>
+            <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              onClick={(event) => openRecipeDetail(recipe, event)}
+            />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
       {selectedRecipe && (
         <RecipeDetail
